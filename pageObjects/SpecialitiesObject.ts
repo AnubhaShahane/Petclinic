@@ -19,7 +19,7 @@ export class SpecialitiesObject {
         this.Name = element(by.xpath("//*[@id='name']"));
         this.SaveBtn = element(by.xpath("//*[@id='specialty']/div[2]/div/button"));
         this.TextField=element(by.xpath("//*[@id='3']"));
-        this.EditBtn=element(by.xpath("//*[@id='specialties']/tbody/tr[4]/td[2]/button[1]"));
+        this.EditBtn=element(by.xpath("//*[@id='specialties']/tbody/tr[3]/td[2]/button[1]"));
         this.EditName=element(by.xpath("//*[@id='name']"));
         this.UpdateBtn=element(by.xpath("//*[@id='specialty']/div[2]/div/button[1]"));
         this.DeleteBtn=element(by.xpath("//*[@id='specialties']/tbody/tr[4]/td[2]/button[2]"))

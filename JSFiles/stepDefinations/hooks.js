@@ -23,33 +23,30 @@ cucumber_1.After(function (scenario) {
         //This hook will be executed before scenarios tagged with @foo
         const screenshot = yield protractor_1.browser.takeScreenshot();
         this.attach(screenshot, "image/png");
-        this.delete(screenshot);
     });
 });
-cucumber_1.Before({ tags: '@first' }, function () {
-    return __awaiter(this, void 0, void 0, function* () {
-        yield console.log('Before first scenario');
-    });
-});
-cucumber_1.After({ tags: '@first' }, function () {
-    return __awaiter(this, void 0, void 0, function* () {
-        yield console.log('After first scenario');
-    });
-});
-cucumber_1.Before({ tags: '@second' }, function () {
-    return __awaiter(this, void 0, void 0, function* () {
-        //await console.log('Before first scenario')
-    });
-});
-cucumber_1.After({ tags: '@second' }, function () {
-    return __awaiter(this, void 0, void 0, function* () {
-        //await console.log('After first scenario')
-    });
-});
-cucumber_1.Before({ tags: '@third' }, function () {
-    //await console.log('Before first scenario')
-});
-cucumber_1.After({ tags: '@third' }, function () {
-    //await console.log('After first scenario')
-});
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9va3MuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zdGVwRGVmaW5hdGlvbnMvaG9va3MudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFBQSx1Q0FBaUQ7QUFDakQsMkNBQXFDO0FBR3JDLGlCQUFNLENBQUM7O1FBQ0wsTUFBTSxPQUFPLENBQUMsR0FBRyxDQUFDLHVCQUF1QixDQUFDLENBQUM7UUFFM0MsK0RBQStEO1FBQy9ELDREQUE0RDtJQUU5RCxDQUFDO0NBQUEsQ0FBQyxDQUFDO0FBRUgsZ0JBQUssQ0FBQyxVQUFnQixRQUFROztRQUM1Qiw4REFBOEQ7UUFFOUQsTUFBTSxVQUFVLEdBQUcsTUFBTSxvQkFBTyxDQUFDLGNBQWMsRUFBRSxDQUFDO1FBQ2xELElBQUksQ0FBQyxNQUFNLENBQUMsVUFBVSxFQUFFLFdBQVcsQ0FBQyxDQUFBO1FBQ3BDLElBQUksQ0FBQyxNQUFNLENBQUMsVUFBVSxDQUFDLENBQUE7SUFFekIsQ0FBQztDQUFBLENBQUMsQ0FBQztBQUdILGlCQUFNLENBQUMsRUFBQyxJQUFJLEVBQUUsUUFBUSxFQUFDLEVBQUM7O1FBRXRCLE1BQU0sT0FBTyxDQUFDLEdBQUcsQ0FBQyx1QkFBdUIsQ0FBQyxDQUFBO0lBQzVDLENBQUM7Q0FBQSxDQUFDLENBQUM7QUFFSCxnQkFBSyxDQUFDLEVBQUMsSUFBSSxFQUFFLFFBQVEsRUFBQyxFQUFDOztRQUVyQixNQUFNLE9BQU8sQ0FBQyxHQUFHLENBQUMsc0JBQXNCLENBQUMsQ0FBQTtJQUMzQyxDQUFDO0NBQUEsQ0FBQyxDQUFDO0FBRUgsaUJBQU0sQ0FBQyxFQUFDLElBQUksRUFBRSxTQUFTLEVBQUMsRUFBQzs7UUFFdkIsNENBQTRDO0lBQzlDLENBQUM7Q0FBQSxDQUFDLENBQUM7QUFFSCxnQkFBSyxDQUFDLEVBQUMsSUFBSSxFQUFFLFNBQVMsRUFBQyxFQUFDOztRQUV0QiwyQ0FBMkM7SUFDN0MsQ0FBQztDQUFBLENBQUMsQ0FBQztBQUVILGlCQUFNLENBQUMsRUFBQyxJQUFJLEVBQUUsUUFBUSxFQUFDLEVBQUM7SUFFdEIsNENBQTRDO0FBQzlDLENBQUMsQ0FBQyxDQUFDO0FBRUgsZ0JBQUssQ0FBQyxFQUFDLElBQUksRUFBRSxRQUFRLEVBQUMsRUFBRTtJQUV0QiwyQ0FBMkM7QUFDN0MsQ0FBQyxDQUFDLENBQUMifQ==
+// Before({tags :'@first'},async function()
+// {
+//   await console.log('Before first scenario')
+// });
+// After({tags :'@first'},async function()
+// {
+//   await console.log('After first scenario')
+// });
+// Before({tags :'@second'},async function()
+// {
+//   //await console.log('Before first scenario')
+// });
+// After({tags :'@second'},async function()
+// {
+//   //await console.log('After first scenario')
+// });
+// Before({tags :'@third'},function()
+// {
+//   //await console.log('Before first scenario')
+// });
+// After({tags :'@third'}, function()
+// {
+//   //await console.log('After first scenario')
+// });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9va3MuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zdGVwRGVmaW5hdGlvbnMvaG9va3MudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFBQSx1Q0FBaUQ7QUFDakQsMkNBQXFDO0FBR3JDLGlCQUFNLENBQUM7O1FBQ0wsTUFBTSxPQUFPLENBQUMsR0FBRyxDQUFDLHVCQUF1QixDQUFDLENBQUM7UUFFM0MsK0RBQStEO1FBQy9ELDREQUE0RDtJQUU5RCxDQUFDO0NBQUEsQ0FBQyxDQUFDO0FBRUgsZ0JBQUssQ0FBQyxVQUFnQixRQUFROztRQUM1Qiw4REFBOEQ7UUFFOUQsTUFBTSxVQUFVLEdBQUcsTUFBTSxvQkFBTyxDQUFDLGNBQWMsRUFBRSxDQUFDO1FBQ2xELElBQUksQ0FBQyxNQUFNLENBQUMsVUFBVSxFQUFFLFdBQVcsQ0FBQyxDQUFBO0lBR3RDLENBQUM7Q0FBQSxDQUFDLENBQUM7QUFHSCwyQ0FBMkM7QUFDM0MsSUFBSTtBQUNKLCtDQUErQztBQUMvQyxNQUFNO0FBRU4sMENBQTBDO0FBQzFDLElBQUk7QUFDSiw4Q0FBOEM7QUFDOUMsTUFBTTtBQUVOLDRDQUE0QztBQUM1QyxJQUFJO0FBQ0osaURBQWlEO0FBQ2pELE1BQU07QUFFTiwyQ0FBMkM7QUFDM0MsSUFBSTtBQUNKLGdEQUFnRDtBQUNoRCxNQUFNO0FBRU4scUNBQXFDO0FBQ3JDLElBQUk7QUFDSixpREFBaUQ7QUFDakQsTUFBTTtBQUVOLHFDQUFxQztBQUNyQyxJQUFJO0FBQ0osZ0RBQWdEO0FBQ2hELE1BQU0ifQ==

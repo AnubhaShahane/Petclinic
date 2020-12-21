@@ -14,6 +14,7 @@ setDefaultTimeout(50 * 1000);
 let HomeObj = new HomePageObjects();
 let specialitiesObj= new SpecialitiesObject();
 
+//browser.sleep(5000);
 Given('User is on New speciality page', async function () {
     let pagename = await HomeObj.Specialties.getText();
     await HomeObj.Specialties.click();
@@ -43,12 +44,12 @@ Then('New specialities should be added', async function () {
 
 //second scenario
 
-Given('User is on speciality page', async function () {
-    let pagename = await HomeObj.Specialties.getText();
-    //await HomeObj.Specialties.click();
-    await console.log("page name is : " + pagename);
+// Given('User is on speciality page', async function () {
+//     let pagename = await HomeObj.Specialties.getText();
+//     //await HomeObj.Specialties.click();
+//     await console.log("page name is : " + pagename);
 
-});
+//});
 When('User clicks on edit button', async function () {
 //    var value=document.getElementsByName("spec_name").values;
 //    expect(value).toEqual("Given");
@@ -74,13 +75,13 @@ Then('Speciality should be updated', async function () {
 });
 
 
-//delete scenario
+// //delete scenario
 
-When('User clicks on delete button', async function () {
+// When('User clicks on delete button', async function () {
 
-    await specialitiesObj.DeleteBtn.click();
-});
+//     await specialitiesObj.DeleteBtn.click();
+// });
 
-Then('Name should be deleted', async function () {
-    await console.log("Name is deleted Successfully");
-});
+// Then('Name should be deleted', async function () {
+//     await console.log("Name is deleted Successfully");
+// });

@@ -8,7 +8,7 @@ class SpecialitiesObject {
         this.Name = protractor_1.element(protractor_1.by.xpath("//*[@id='name']"));
         this.SaveBtn = protractor_1.element(protractor_1.by.xpath("//*[@id='specialty']/div[2]/div/button"));
         this.TextField = protractor_1.element(protractor_1.by.xpath("//*[@id='3']"));
-        this.EditBtn = protractor_1.element(protractor_1.by.xpath("//*[@id='specialties']/tbody/tr[4]/td[2]/button[1]"));
+        this.EditBtn = protractor_1.element(protractor_1.by.xpath("//*[@id='specialties']/tbody/tr[3]/td[2]/button[1]"));
         this.EditName = protractor_1.element(protractor_1.by.xpath("//*[@id='name']"));
         this.UpdateBtn = protractor_1.element(protractor_1.by.xpath("//*[@id='specialty']/div[2]/div/button[1]"));
         this.DeleteBtn = protractor_1.element(protractor_1.by.xpath("//*[@id='specialties']/tbody/tr[4]/td[2]/button[2]"));

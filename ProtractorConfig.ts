@@ -68,6 +68,7 @@ export let config: Config = {
 
     browser.ignoreSynchronization = false;
     browser.driver.manage().window().maximize();
+    browser.waitForAngularEnabled(false);
   },
   onComplete: () => {
     var options = {

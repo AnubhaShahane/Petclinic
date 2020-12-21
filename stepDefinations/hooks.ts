@@ -20,35 +20,35 @@ After(async function (scenario) {
 });
 
 
-Before({tags :'@first'},async function()
-{
-  await console.log('Before first scenario')
-});
+// Before({tags :'@first'},async function()
+// {
+//   await console.log('Before first scenario')
+// });
 
-After({tags :'@first'},async function()
-{
-  await console.log('After first scenario')
-});
+// After({tags :'@first'},async function()
+// {
+//   await console.log('After first scenario')
+// });
 
-Before({tags :'@second'},async function()
-{
-  //await console.log('Before first scenario')
-});
+// Before({tags :'@second'},async function()
+// {
+//   //await console.log('Before first scenario')
+// });
 
-After({tags :'@second'},async function()
-{
-  //await console.log('After first scenario')
-});
+// After({tags :'@second'},async function()
+// {
+//   //await console.log('After first scenario')
+// });
 
-Before({tags :'@third'},function()
-{
-  //await console.log('Before first scenario')
-});
+// Before({tags :'@third'},function()
+// {
+//   //await console.log('Before first scenario')
+// });
 
-After({tags :'@third'}, function()
-{
-  //await console.log('After first scenario')
-});
+// After({tags :'@third'}, function()
+// {
+//   //await console.log('After first scenario')
+// });
 
 
 
