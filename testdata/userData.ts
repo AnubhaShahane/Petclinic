@@ -7,7 +7,7 @@ export default {
             City: "PUNE",
             Telephone: "12345",
             Name: "Other",
-            EditName: "Ear"
+            EditName: "Test12"
         }
        
 

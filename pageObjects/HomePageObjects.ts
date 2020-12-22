@@ -18,7 +18,7 @@ export class HomePageObjects {
         this.Owners = element(by.xpath("//*[@class='nav navbar-nav']/li[2]/a"));
         this.Veterinarians = element(by.xpath("//*[@class='nav navbar-nav']/li[3]/a"));
         this.PetTypes = element(by.xpath("//*[@class='nav navbar-nav']/li[4]/a"));
-        this.Specialties = element(by.xpath("//*[@class='nav navbar-nav']/li[5]"));
+        this.Specialties = element(by.xpath("//*[@class='nav navbar-nav']/li[5]/a"));
         this.AllOwners= element(by.linkText("ALL"));
         this.AddNewOwner= element(by.linkText("ADD NEW"));
         this.OwnerList=element(by.xpath("//table[@class='table table-striped']/thead/tr"));
