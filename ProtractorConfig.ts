@@ -48,8 +48,8 @@ export let config: Config = {
   specs: [
     '../features/login.feature',
     '../features/homePage.feature',
-    //'../features/newOwner.feature',
-    '../features/specialities.feature'
+    '../features/newOwner.feature',
+    //'../features/specialities.feature'
   ],
 
   cucumberOpts: {

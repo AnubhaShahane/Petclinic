@@ -59,7 +59,7 @@ When('User clicks on edit button', async function () {
     
 });
 
-When('User enters new name', async function () {
+When('User enters new name', async function (): Promise<void> {
     let EditName = testdata.userData.OwnerData.EditName;
     await SpecialitiesObj.EditName.clear();
     await SpecialitiesObj.EditName.sendKeys(EditName);

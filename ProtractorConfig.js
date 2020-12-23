@@ -33,10 +33,10 @@ exports.config = {
         }
     },
     specs: [
-        // '../features/login.feature',
-        // '../features/homePage.feature',
-        '../features/specialities.feature'
-    ],
+        '../features/login.feature',
+        '../features/homePage.feature',
+        '../features/newOwner.feature',
+        ],
     cucumberOpts: {
         // require step definitions
         //tags:"@login",
