@@ -68,6 +68,8 @@ Then('User should be navigated to owners page and added owner should be displaye
 
     await browser.wait(EC.elementToBeClickable(ownerDetails),2000,' Element is taking longer time than expected');
     await console.log("New added owner name is:",ownerName);
+
+    //await browser.refresh();
     
 
     
@@ -78,9 +80,13 @@ Then('User should be navigated to owners page and added owner should be displaye
 
 
 
-When('User searches particular owner name',async function() {
+When('User searches particular owner name',async function() 
+{
 
-    let count = await newOwnerObj.ArrayListElement.all(by.tagName("tr")).all(by.tagName("td")).count();
+    await HomeObj.Owners.click();
+    await newOwnerObj.AllList.click();
+    
+    let count = await newOwnerObj.ArrayListElement.all(by.tagName("tr")).count();
     console.log("Count is:",count);
 
     for (let i = 1; i <= count; i++) 
