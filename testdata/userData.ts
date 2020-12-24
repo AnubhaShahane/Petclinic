@@ -1,15 +1,29 @@
 export default {
     userData: {
-        OwnerData: {
-            FirstName: "Elizabeth",
-            LastName: "Davies",
-            Address: "A-10",
+        OwnerData: 
+        {
+            FirstName: "Howard",
+            LastName: "Grill",
+            Address: "Silveria woods",
             City: "PUNE",
-            Telephone: "12345",
+            Telephone: "9825410365",
             Name: "Other",
-            EditName: "Test12"
+            EditName: "Test12",
+
+            OwnerDetails:
+            {
+                Name: "Howard",
+                LastName: "Grill",
+                 Address: "Silveria woods",
+                City: "PUNE",
+                Telephone: "9825410365",
+
+            
+            }
         }
+        
        
+        
 
     }
 }
