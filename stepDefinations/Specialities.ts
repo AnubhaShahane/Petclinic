@@ -22,7 +22,8 @@ Given('User is on New speciality page', async function () {
     await console.log("page name is : " + pagename);
 
 });
-When('User clicks on add button', async function () {
+When('User clicks on add button', async function () 
+{
     await SpecialitiesObj.AddBtn.click();
 
     

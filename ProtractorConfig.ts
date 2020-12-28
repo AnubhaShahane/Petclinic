@@ -1,5 +1,7 @@
 import { Config, browser } from "protractor";
+//import {WebDriver} from 'selenium-webdriver';
 let reporter = require('cucumber-html-reporter');
+
 
 //var  Feature = 'APITestingDemo';
 
@@ -24,11 +26,24 @@ export let config: Config = {
   frameworkPath: require.resolve('protractor-cucumber-framework'),
 
 
-  // Capabilities to be passed to the webdriver instance.
+  // Capabilities to be passed to the webdriver instan
 
   capabilities:
   {
-    browserName: 'chrome',
+     browserName: 'chrome',
+    //  firefox_profile: 'support/firefox_profile',
+    // 'moz:firefoxOptions': 
+    // {
+    //  'args': ['--safe-mode']
+    // },
+    // prefs:{
+    // download: {
+    //         prompt_for_download: false,
+    //         directory_upgrade: true,
+    //         default_directory: './Download/'
+    //       }
+    // }
+  
 
     chromeOptions: {
 
@@ -43,13 +58,14 @@ export let config: Config = {
         }
       }
     }
-  },
+  
+},
 
   specs: [
     '../features/login.feature',
     '../features/homePage.feature',
     '../features/newOwner.feature',
-    //'../features/specialities.feature',
+    '../features/specialities.feature',
     '../features/Vet.feature'
   ],
 
@@ -65,14 +81,20 @@ export let config: Config = {
     ]
   },
 
-  onPrepare: () => {
+  onPrepare: () => 
+  {
 
     browser.ignoreSynchronization = false;
     browser.driver.manage().window().maximize();
     browser.waitForAngularEnabled(false);
+    
+    
+    
   },
-  onComplete: () => {
-    var options = {
+  onComplete: () => 
+  {
+    var options = 
+    {
       theme: 'bootstrap',
       jsonFile: './cucumberreport.json',
       screenshotsDirectory: 'screenshots/',
@@ -80,11 +102,12 @@ export let config: Config = {
       output: './Reports/' + ReportDate + '.html',
       reportSuiteAsScenarios: true,
       launchReport: true,
-      metadata: {
+      metadata: 
+      {
         "App Version": "0.3.2",
         "Test Environment": "test",
-        "Browser": "Chrome  79.0.3945.88",
-        "Platform": "Windows 7",
+        "Browser": "Firefox  84.0.1",
+        "Platform": "Windows 10",
         "Parallel": "Scenarios",
         "Executed": "Web App"
       }

@@ -17,8 +17,8 @@ let VatObj =new VatPageObj();
 
 Given('User is on Veterinarians page', async function()
 {
-    let pagename = await HomeObj.PageName.getText();
     await HomeObj.Veterinarians.click();
+    let pagename = await HomeObj.PageName.getText();
     await console.log("Pagename at vat is:"+pagename);
 
 
