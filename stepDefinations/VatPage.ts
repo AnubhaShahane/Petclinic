@@ -1,33 +1,33 @@
 import { Given, When, Then } from "cucumber";
-import { VatPageObj } from "../pageObjects/VatPageObject";
-import { HomePageObjects } from "../pageObjects/HomePageObjects";
+import { VatPageObj } from "../pageObjects/VetObject";
+import { HomePageObjects } from "../pageObjects/HomePageObject";
 import { browser, Button, by, element, ElementFinder, ExpectedConditions, protractor } from "protractor";
-import testdata from "../testdata/userData";
+
 
 const chai = require("chai").use(require("chai-as-promised"));
 const expect = chai.expect;
 const SpecialityStrCnt = "radiology";
 
-var until=protractor.ExpectedConditions;
+//var until=protractor.ExpectedConditions;
 var { setDefaultTimeout } = require('cucumber');
 setDefaultTimeout(50 * 1000);
 
-let HomeObj = new HomePageObjects();
-let VatObj =new VatPageObj();
+let HomePage = new HomePageObjects();
+let VatPage =new VatPageObj();
 
 Given('User is on Veterinarians page', async function()
 {
-    await HomeObj.Veterinarians.click();
-    let pagename = await HomeObj.PageName.getText();
-    await console.log("Pagename at vat is:"+pagename);
+    await HomePage.Veterinarians.click();
+    let pagename =  HomePage.PageName.getText();
+    console.log("Pagename at vat is:"+pagename);
 
 
 });
 
 When('User clicks on All tab list of all Veterinarians id displayed with Specialties',async function () 
 {
-    await VatObj.AllVat.click();
-    await console.log("List is displayed");
+    await VatPage.AllVat.click();
+    console.log("List is displayed");
     
 });
 
@@ -36,7 +36,7 @@ Then('Count of radiology specialities should be displayed',async function()
 {
         let iSpeciality = 0;      
 
-        let btnEditVet = VatObj.AllTbl.all(by.tagName("tr")).all(by.tagName("td")).each(function (item) 
+        let btnEditVet = VatPage.AllTbl.all(by.tagName("tr")).each(function (item) 
         {
             
             

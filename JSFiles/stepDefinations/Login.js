@@ -10,22 +10,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const cucumber_1 = require("cucumber");
-const LoginPageObjects_1 = require("../pageObjects/LoginPageObjects");
+const LoginPageObject_1 = require("../pageObjects/LoginPageObject");
 const protractor_1 = require("protractor");
+const log = require("../log/logs").default;
 const chai = require("chai").use(require("chai-as-promised"));
 const expect = chai.expect;
 var { setDefaultTimeout } = require('cucumber');
 setDefaultTimeout(50 * 1000);
-let logObj = new LoginPageObjects_1.LoginPageObjects();
+let LoginPage = new LoginPageObject_1.LoginPageObjects();
+var EC = protractor_1.protractor.ExpectedConditions;
 cucumber_1.Given('User will navigate to Petclinic url', function () {
     return __awaiter(this, void 0, void 0, function* () {
-        yield protractor_1.browser.get('http://petclinicui.e46708b92c054086909b.eastus.aksapp.io/petclinic/');
-        yield protractor_1.browser.sleep(1000);
+        yield protractor_1.browser.get(protractor_1.browser.baseUrl);
+        //await browser.wait(EC.urlIs(baseUrl),3000);
+        //browser.get('http://petclinicui.e46708b92c054086909b.eastus.aksapp.io/petclinic/');
     });
 });
 cucumber_1.Then('User should able to see Welcome to Petclinic message', function () {
     return __awaiter(this, void 0, void 0, function* () {
-        yield logObj.WelcomeMsg.isDisplayed().then(function (result) {
+        protractor_1.browser.wait(EC.visibilityOf(LoginPage.WelcomeMsg), 4000);
+        yield LoginPage.WelcomeMsg.isDisplayed().then(function (result) {
             return __awaiter(this, void 0, void 0, function* () {
                 yield expect(true).to.equal(result);
             });
@@ -35,8 +39,9 @@ cucumber_1.Then('User should able to see Welcome to Petclinic message', function
 cucumber_1.Then('User should able to see title of the webpage', function () {
     return __awaiter(this, void 0, void 0, function* () {
         let title = yield protractor_1.browser.getTitle();
-        yield console.log("WebPage Title is " + title);
+        //log.debug("WebPage Title is " + title);
+        console.log("WebPage Title is " + title);
         yield expect("SpringPetclinicAngular").to.equal(title);
     });
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTG9naW4uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zdGVwRGVmaW5hdGlvbnMvTG9naW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFBQSx1Q0FBNkM7QUFDN0Msc0VBQW1FO0FBQ25FLDJDQUE0RTtBQUM1RSxNQUFNLElBQUksR0FBRyxPQUFPLENBQUMsTUFBTSxDQUFDLENBQUMsR0FBRyxDQUFDLE9BQU8sQ0FBQyxrQkFBa0IsQ0FBQyxDQUFDLENBQUM7QUFDOUQsTUFBTSxNQUFNLEdBQUcsSUFBSSxDQUFDLE1BQU0sQ0FBQztBQUMzQixJQUFJLEVBQUUsaUJBQWlCLEVBQUUsR0FBRyxPQUFPLENBQUMsVUFBVSxDQUFDLENBQUM7QUFDaEQsaUJBQWlCLENBQUMsRUFBRSxHQUFHLElBQUksQ0FBQyxDQUFDO0FBRTdCLElBQUksTUFBTSxHQUFHLElBQUksbUNBQWdCLEVBQUUsQ0FBQztBQUVwQyxnQkFBSyxDQUFDLHFDQUFxQyxFQUFFOztRQUN6QyxNQUFNLG9CQUFPLENBQUMsR0FBRyxDQUFDLHFFQUFxRSxDQUFDLENBQUM7UUFDekYsTUFBTSxvQkFBTyxDQUFDLEtBQUssQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUM5QixDQUFDO0NBQUEsQ0FBQyxDQUFDO0FBRUgsZUFBSSxDQUFDLHNEQUFzRCxFQUFFOztRQUN6RCxNQUFNLE1BQU0sQ0FBQyxVQUFVLENBQUMsV0FBVyxFQUFFLENBQUMsSUFBSSxDQUFDLFVBQWdCLE1BQU07O2dCQUM3RCxNQUFNLE1BQU0sQ0FBQyxJQUFJLENBQUMsQ0FBQyxFQUFFLENBQUMsS0FBSyxDQUFDLE1BQU0sQ0FBQyxDQUFDO1lBQ3hDLENBQUM7U0FBQSxDQUFDLENBQUM7SUFDUCxDQUFDO0NBQUEsQ0FBQyxDQUFDO0FBQ0gsZUFBSSxDQUFDLDhDQUE4QyxFQUFFOztRQUNqRCxJQUFJLEtBQUssR0FBRyxNQUFNLG9CQUFPLENBQUMsUUFBUSxFQUFFLENBQUM7UUFDckMsTUFBTSxPQUFPLENBQUMsR0FBRyxDQUFDLG1CQUFtQixHQUFHLEtBQUssQ0FBQyxDQUFDO1FBQy9DLE1BQU0sTUFBTSxDQUFDLHdCQUF3QixDQUFDLENBQUMsRUFBRSxDQUFDLEtBQUssQ0FBQyxLQUFLLENBQUMsQ0FBQztJQUMzRCxDQUFDO0NBQUEsQ0FBQyxDQUFDIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTG9naW4uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zdGVwRGVmaW5hdGlvbnMvTG9naW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFBQSx1Q0FBNkM7QUFDN0Msb0VBQWtFO0FBQ2xFLDJDQUE2RTtBQUU3RSxNQUFNLEdBQUcsR0FBRyxPQUFPLENBQUMsYUFBYSxDQUFDLENBQUMsT0FBTyxDQUFDO0FBQzNDLE1BQU0sSUFBSSxHQUFHLE9BQU8sQ0FBQyxNQUFNLENBQUMsQ0FBQyxHQUFHLENBQUMsT0FBTyxDQUFDLGtCQUFrQixDQUFDLENBQUMsQ0FBQztBQUM5RCxNQUFNLE1BQU0sR0FBRyxJQUFJLENBQUMsTUFBTSxDQUFDO0FBQzNCLElBQUksRUFBRSxpQkFBaUIsRUFBRSxHQUFHLE9BQU8sQ0FBQyxVQUFVLENBQUMsQ0FBQztBQUNoRCxpQkFBaUIsQ0FBQyxFQUFFLEdBQUcsSUFBSSxDQUFDLENBQUM7QUFFN0IsSUFBSSxTQUFTLEdBQUcsSUFBSSxrQ0FBZ0IsRUFBRSxDQUFDO0FBQ3ZDLElBQUksRUFBRSxHQUFHLHVCQUFVLENBQUMsa0JBQWtCLENBQUM7QUFFdkMsZ0JBQUssQ0FBQyxxQ0FBcUMsRUFBRTs7UUFHekMsTUFBTSxvQkFBTyxDQUFDLEdBQUcsQ0FBQyxvQkFBTyxDQUFDLE9BQU8sQ0FBQyxDQUFDO1FBRW5DLDZDQUE2QztRQUM3QyxxRkFBcUY7SUFHekYsQ0FBQztDQUFBLENBQUMsQ0FBQztBQUVILGVBQUksQ0FBQyxzREFBc0QsRUFBRTs7UUFFekQsb0JBQU8sQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLFlBQVksQ0FBQyxTQUFTLENBQUMsVUFBVSxDQUFDLEVBQUMsSUFBSSxDQUFDLENBQUM7UUFDekQsTUFBTSxTQUFTLENBQUMsVUFBVSxDQUFDLFdBQVcsRUFBRSxDQUFDLElBQUksQ0FBQyxVQUFnQixNQUFNOztnQkFFaEUsTUFBTSxNQUFNLENBQUMsSUFBSSxDQUFDLENBQUMsRUFBRSxDQUFDLEtBQUssQ0FBQyxNQUFNLENBQUMsQ0FBQztZQUN4QyxDQUFDO1NBQUEsQ0FBQyxDQUFDO0lBQ1AsQ0FBQztDQUFBLENBQUMsQ0FBQztBQUVILGVBQUksQ0FBQyw4Q0FBOEMsRUFBRTs7UUFFakQsSUFBSSxLQUFLLEdBQUcsTUFBTSxvQkFBTyxDQUFDLFFBQVEsRUFBRSxDQUFDO1FBQ3BDLHlDQUF5QztRQUN6QyxPQUFPLENBQUMsR0FBRyxDQUFDLG1CQUFtQixHQUFHLEtBQUssQ0FBQyxDQUFDO1FBQzFDLE1BQU0sTUFBTSxDQUFDLHdCQUF3QixDQUFDLENBQUMsRUFBRSxDQUFDLEtBQUssQ0FBQyxLQUFLLENBQUMsQ0FBQztJQUMzRCxDQUFDO0NBQUEsQ0FBQyxDQUFDIn0=

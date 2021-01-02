@@ -12,7 +12,7 @@
     "Webdriver_update": "./node_modules/.bin/webdriver-manager update",
     "clean": "./node_modules/.bin/webdriver-manager clean"
   },
-  "author": "Vikram",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "@typed/hashmap": "^1.0.1",
@@ -25,6 +25,7 @@
     "cucumber": "^5.1.0",
     "exceljs": "^3.5.0",
     "jasmine": "^3.4.0",
+    "log4js": "^6.3.0",
     "moment": "^2.27.0",
     "oracledb": "^4.2.0",
     "properties-reader": "^0.3.1",
@@ -35,7 +36,6 @@
     "typescript": "^3.9.3"
   },
   "devDependencies": {
-    
     "cucumber-html-reporter": "^5.0.2",
     "eslint": "^7.16.0",
     "eslint-plugin-protractor": "^2.1.1",

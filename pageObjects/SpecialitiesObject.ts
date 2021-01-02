@@ -15,7 +15,7 @@ export class SpecialitiesObject {
 
     constructor() {
         
-        this.AddBtn = element(by.xpath("/html/body/app-root/app-specialty-list/div/div/div/button[2]"));
+        this.AddBtn = element(by.xpath("//div/button[2][@class='btn btn-default']"));
         this.Name = element(by.xpath("//*[@id='name']"));
         this.SaveBtn = element(by.xpath("//*[@id='specialty']/div[2]/div/button"));
         this.TextField=element(by.xpath("//*[@id='3']"));

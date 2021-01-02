@@ -1,6 +1,6 @@
 import { Given, When, Then } from "cucumber";
 import { SpecialitiesObject} from "../pageObjects/SpecialitiesObject";
-import { HomePageObjects } from "../pageObjects/HomePageObjects";
+import { HomePageObjects } from "../pageObjects/HomePageObject";
 import { browser, by, element, ElementFinder, protractor } from "protractor";
 import testdata from "../testdata/userData";
 import { isAssertionExpression } from "typescript";
@@ -60,7 +60,8 @@ When('User clicks on edit button', async function () {
     
 });
 
-When('User enters new name', async function (): Promise<void> {
+When('User enters new name', async function () 
+{
     let EditName = testdata.userData.OwnerData.EditName;
     await SpecialitiesObj.EditName.clear();
     await SpecialitiesObj.EditName.sendKeys(EditName);
@@ -68,7 +69,8 @@ When('User enters new name', async function (): Promise<void> {
     
 });
 
-When('User clicks on update button', async function () {
+When('User clicks on update button', async function () 
+{
     await SpecialitiesObj.UpdateBtn.click();
 });
 

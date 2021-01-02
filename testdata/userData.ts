@@ -1,7 +1,12 @@
 export default {
     userData: {
+        Url:
+        {
+            BaseUrl :"",
+        },
         OwnerData: 
         {
+            
             FirstName: "Howard",
             LastName: "Grill",
             Address: "Silveria woods",
@@ -9,6 +14,7 @@ export default {
             Telephone: "9825410365",
             Name: "Other",
             EditName: "Test12",
+
 
             OwnerDetails:
             {
@@ -20,6 +26,7 @@ export default {
 
             
             }
+
         }
         
        
