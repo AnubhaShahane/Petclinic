@@ -1,30 +1,36 @@
-import { ElementFinder, element, by, ElementArrayFinder } from "protractor";
-//import locators from "../TestData/webObjects";
+//import { ElementFinder, element, by, ElementArrayFinder } from "protractor";
+import { browser, protractor , element, by} from "protractor";
 
-export class HomePageObjects {
-    HomeMenu: ElementFinder;
-    Owners: ElementFinder;
-    Veterinarians: ElementFinder;
-    PetTypes: ElementFinder;
-    Specialties: ElementFinder;
-    AllOwners:ElementFinder;
-    AddNewOwner:ElementFinder;
-    OwnerList:ElementFinder;
-    PageName:ElementFinder;
-    AddOwnerButton:ElementFinder;
+var EC = protractor.ExpectedConditions;
+const chai = require("chai").use(require("chai-as-promised"));
+const expect = chai.expect;
+const log = require("../log/logs").default;
 
-    constructor() {
-        this.HomeMenu = element(by.xpath("//*[@class='nav navbar-nav']/li[1]/a"));
-        this.Owners = element(by.xpath("//*[@class='nav navbar-nav']/li[2]/a"));
-        this.Veterinarians = element(by.xpath("//*[@class='nav navbar-nav']/li[3]/a"));
-        this.PetTypes = element(by.xpath("//*[@class='nav navbar-nav']/li[4]/a"));
-        this.Specialties = element(by.xpath("//*[@class='nav navbar-nav']/li[5]/a"));
-        this.AllOwners= element(by.linkText("ALL"));
-        this.AddNewOwner= element(by.linkText("ADD NEW"));
-        this.OwnerList=element(by.xpath("//table[@class='table table-striped']/thead/tr"));
-        this.PageName=element(by.xpath("//*[@class='container xd-container']/h2"));
-        this.AddOwnerButton=element(by.xpath("//*[@class='btn btn-default']"));
+export class HomePageObjects 
+{
+    private Home=element(by.css("ul.navbar-nav .glyphicon-home"));
+    private VetTab=element(by.css('[href="/petclinic/vets"]'));
+    private OwnersTab=element(by.css('[href="/petclinic/owners"]'));
+    private PageTitle=element(by.css('div.xd-container h2'));
+
+    async HomePageClick()
+    {
+        await this.Home.click();
+    }
     
+
+    async OwnerTabClick()
+    {
+        
+         let PageTitle = this.PageTitle.getText();
+         this.OwnersTab.click();
+         await log.debug("Page name is " + PageTitle);
+         
+    }
+
+    async VetTabClick()
+    {
+        await this.VetTab.click();
     }
 
 

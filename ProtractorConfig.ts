@@ -62,11 +62,11 @@ export let config: Config = {
 },
 
 specs: [
-  '../features/login.feature',
-  //'../features/homePage.feature',
+  //'../features/login.feature',
+  '../features/homePage.feature',
    '../features/newOwner.feature',
   // '../features/specialities.feature',
-  //'../features/Vet.feature'
+  '../features/Vet.feature'
 ],
   
 

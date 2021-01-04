@@ -8,62 +8,25 @@ const log = require("../log/logs").default;
 export class newOwnerPageObject 
 {
 
-  private FirstName=element(by.xpath("//input[@id='firstName']"));
-  private LastName=element(by.xpath("//*[@id='lastName']"));
-  private Address= element(by.xpath("//*[@id='address']"));
-  private City= element(by.xpath("//*[@id='city']"));
-  private Telephone= element(by.xpath("//*[@id='telephone']"));
-  private AddNewOwner= element(by.xpath("//*[contains(text(),'Add New')]"));
-  private OwnersTab=element(by.xpath("//*[@class='nav navbar-nav']/li[2]/a"));
-  private AddOwnerButton=element(by.xpath("//*[@class='btn btn-default' and text()='Add Owner']"));
-  private AllOwnersTabSearch=element(by.xpath("//*[@class='glyphicon glyphicon-search']"));
-  private PageTitle=element(by.xpath("//*[@class='container xd-container']/h2"));
-  private TableContentOwner=element(by.xpath("//*[@class='table table-striped']/tbody"));
+  private FirstName=element(by.id('firstName'));
+  private LastName=element(by.id('lastName'));
+  private Address= element(by.id('address'));
+  private City= element(by.id('city'));
+  private Telephone= element(by.id('telephone'));
+  private AddNewOwner=element(by.css('[href="/petclinic/owners/add"]'));
+  private OwnersTab=element(by.css('[href="/petclinic/owners"]'));
+  private AddOwnerButton=element(by.buttonText('Add Owner'));
+  private AllOwnersTabSearch=element(by.css('[href="/petclinic/owners"]'));
+  private PageTitle=element(by.css('div .xd-container h2'));
+  private TableContentOwner=element(by.css('table.table-striped tbody'));
 
-    // private FirstName: ElementFinder;
-    // private LastName: ElementFinder;
-    // private Address: ElementFinder;
-    // private City: ElementFinder;
-    // private Telephone: ElementFinder;
-    // private AddNewOwner: ElementFinder;
-    // private PetName: ElementFinder;
-    // private PetBirthDate: ElementFinder;
-    // private PetType: ElementFinder;
-    // private AllOwnersTabSearch:ElementFinder;
-    // private OwnersTab: ElementFinder;
-    // private PageTitle:ElementFinder;
-    // private AddOwnerButton :ElementFinder;
-    // private TableContentOwner:ElementFinder;
-   
-    
-    
-
-
-    // constructor() {
-    //     this.FirstName = element(by.xpath("//input[@id='firstName']"));
-    //     this.LastName = element(by.xpath("//*[@id='lastName']"));
-    //     this.Address = element(by.xpath("//*[@id='address']"));
-    //     this.City = element(by.xpath("//*[@id='city']"));
-    //     this.Telephone = element(by.xpath("//*[@id='telephone']"));
-    //     this.AddNewOwner = element(by.xpath("//*[contains(text(),'Add New')]"));
-    //     this.PetName=element(by.xpath("//table[@class='table table-striped']/tr[1]/td/dl/dt"));
-    //     this.PetBirthDate=element(by.xpath("//table[@class='table table-striped']/tr[1]/td/dl/dt[2]"));
-    //     this.AllOwnersTabSearch=element(by.xpath("//*[@class='glyphicon glyphicon-search']"));
-    //     this.PetType=element(by.xpath("//table[@class='table table-striped']/tr[1]/td/dl/dt[3]"));
-    //     this.OwnersTab = element(by.xpath("//*[@class='nav navbar-nav']/li[2]/a"));
-    //     this.TableContentOwner=element(by.xpath("//*[@class='table table-striped']/tbody"));
-    //     this.PageTitle=element(by.xpath("//*[@class='container xd-container']/h2"));
-    //     this.AddOwnerButton=element(by.xpath("//*[@class='btn btn-default' and text()='Add Owner']"));
-        
-        
-    // }
-     async addOwnerClick()
+         async OwnerTabClick()
     {
         
          let PageTitle = this.PageTitle.getText();
          this.OwnersTab.click();
          this.AddNewOwner.click();
-         log.debug("Page name is " + PageTitle);
+         await log.debug("Page name is " + PageTitle);
          //console.log("page name is : " + PageTitle);
     }
 

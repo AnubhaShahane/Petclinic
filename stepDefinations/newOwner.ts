@@ -17,7 +17,7 @@ let OwnerPage = new newOwnerPageObject();
 
 Given('User is on New Owner page', async function () 
 {
-    await OwnerPage.addOwnerClick();
+    await OwnerPage.OwnerTabClick();
  
 });
 
@@ -32,9 +32,7 @@ When('User enters the {string},{string},{string},{string},{string}', async funct
 
 Then('User should be navigated to Owners page', async function ()
 {
-     //OwnerPage.NewAddedOwner();
-
-     //await browser.refresh();
+     await log.debug("Owner lis is displayed!")
 
     
 
